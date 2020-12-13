@@ -1,4 +1,5 @@
 var mysql = require("mysql");
+// const { Sequelize } = require('sequelize');
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -27,3 +28,6 @@ function afterConnection() {
     connection.end();
   });
 }
+
+
+
