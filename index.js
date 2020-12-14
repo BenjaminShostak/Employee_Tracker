@@ -12,21 +12,15 @@ var connection = mysql.createConnection({
 
   // Your password
   password: "This1coder!",
-  database: "Employee_Tracker_DB;"
+  database: "Employee_Tracker_DB",
 });
 
 connection.connect(function(err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId + "\n");
-  readColleges();
+  connection.end();
+
 });
 
-function readColleges() {
-  connection.query("SELECT name FROM Employee_Tracker_DB;", function(err, res) {
-    if (err) throw err;
 
-    // Log all results of the SELECT statement
-    console.log(res);
-    connection.end();
-  });
-}
+    
