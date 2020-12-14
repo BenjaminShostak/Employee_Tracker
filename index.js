@@ -1,6 +1,6 @@
 var mysql = require("mysql");
-// const { Sequelize } = require('sequelize');
 
+// create the connection information for the sql database
 var connection = mysql.createConnection({
   host: "localhost",
 
@@ -12,22 +12,21 @@ var connection = mysql.createConnection({
 
   // Your password
   password: "This1coder!",
-  database: "Employee_Tracker_DB",
+  database: "Employee_Tracker_DB;"
 });
 
 connection.connect(function(err) {
   if (err) throw err;
-  console.log("connected as id " + connection.threadId);
-  afterConnection();
+  console.log("connected as id " + connection.threadId + "\n");
+  readColleges();
 });
 
-function afterConnection() {
-  connection.query("SELECT * FROM products", function(err, res) {
+function readColleges() {
+  connection.query("SELECT name FROM Employee_Tracker_DB;", function(err, res) {
     if (err) throw err;
+
+    // Log all results of the SELECT statement
     console.log(res);
     connection.end();
   });
 }
-
-
-
