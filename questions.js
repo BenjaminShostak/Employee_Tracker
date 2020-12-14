@@ -2,43 +2,12 @@
 var inquirer = require('inquirer');
 var mysql = require("mysql");
 
-
-inquirer
-    .prompt([
-        {
-            type: 'checkbox',
-            message: 'select employee',
-            name: 'employees',
-            choices:    [
-
-                new inquirer.Separator(' = All employees =n'),
-                {
-                    name: 'Barney Rubble'
-                },
-                {
-                    name: 'Wilma Flintstone'
-                },
-
-
-                new inquirer.Separator(' = Add employee = '),
-                {
-                    create
-                }
-            ]
-        },
-
         inquirer
         .prompt([
           {
-            message: "Hello, how can I help you?",
             type: "list",
-            message: "Would you like to [POST] an auction or [BID] on an auction?",
+            message: "Hello, how can I help you?",
             choices: ["POST", "BID", "EXIT"]
-           
-      
-
-
-
 
     ]),
 
@@ -210,7 +179,7 @@ function deleteProduct() {
   connection.query(
     "DELETE FROM products WHERE ?",
     {
-      flavor: "strawberry"
+      first_name: "Homer"
     },
     function(err, res) {
       if (err) throw err;
@@ -222,8 +191,8 @@ function deleteProduct() {
 }
 
 function readProducts() {
-  console.log("Selecting all products...\n");
-  connection.query("SELECT * FROM products", function(err, res) {
+  console.log("Selecting all employee...\n");
+  connection.query("SELECT * FROM Employee_List", function(err, res) {
     if (err) throw err;
     // Log all results of the SELECT statement
     console.log(res);
@@ -273,3 +242,26 @@ function postAuction() {
 }
 
 
+
+inquirer
+    .prompt([
+        {
+            type: 'checkbox',
+            message: 'select employee',
+            name: 'employees',
+            choices:    [
+
+                new inquirer.Separator(' = All employees =n'),
+                {
+                    name: 'Barney Rubble'
+                },
+                {
+                    name: 'Wilma Flintstone'
+                },
+
+
+                new inquirer.Separator(' = Add employee = '),
+                {
+                    create
+                }
+        
