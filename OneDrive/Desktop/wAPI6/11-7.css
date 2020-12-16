@@ -1,0 +1,7 @@
+div{
+    box-sizing: content-box;
+}
+
+div2{
+    box-sizing: border-box;
+}
