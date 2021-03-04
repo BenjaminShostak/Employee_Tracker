@@ -1,5 +1,5 @@
 {
-  "name": "Employee_Tracker",
+
   "version": "1.0.0",
   "description": "Utilizes SQL, Inquirer, Node.js",
   "main": "index.js",

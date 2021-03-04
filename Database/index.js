@@ -13,7 +13,7 @@ class DB {
     );
   }
 
-  // Find all employees except the given employee id
+  // Find all employees except the given employee id///
   findAllPossibleManagers(employeeId) {
     return this.connection.query(
       "SELECT id, first_name, last_name FROM employee WHERE id != ?",
